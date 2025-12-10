@@ -1,0 +1,8 @@
+/venv
+.env
+*.log
+*.cache
+/dist
+/build
+.idea/
+.vscode/
