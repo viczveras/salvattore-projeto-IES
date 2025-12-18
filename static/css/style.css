@@ -1,0 +1,142 @@
+/*Estilo geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/*Estilo do cabeçalho*/
+header {
+    background-color: #003777;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+img.logo {
+    height: 48px;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+nav ul li a {
+    color: #5c5c5c;
+    text-decoration: none;
+    font-size: 1.125em;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+nav ul li a:hover {
+    color: #6c85bd;
+    transform: scale(1.05);
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #003777;
+    color: white;
+    padding: 60px 10% 30px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+footer > div:not(.direitos){
+    display: inline-block;
+    vertical-align: top;
+    width: 45%;
+    margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .direitos {
+        grid-column: span 2;
+    }
+}
+
+.logo_footer img {
+    max-width: 180px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.logo_footer p {
+    color: #ccc;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+.logo_footer a {
+    color: #6c85bd;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.logo_footer a:hover {
+    color: #ffffff;
+}
+
+.contato h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contato ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contato li {
+    color: #ccc;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid red;
+    margin-bottom: 20px;
+}
+
+.direitos {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.direitos p {
+    color: #ccc;
+    font-size: 0.85em;
+}
+
+@media (max-width: 767px) {
+    footer > div:not(.direitos) {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contato h3 {
+        margin-top: 20px;
+    }
+}
