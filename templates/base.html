@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site da assessoria educacional Salvattore">
-    <link rel="stylesheet" href="/salvattore-projeto-IES/static/css/style.css">  
-    <title>Salvattore Assessoria</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">  
+    <title>{%block title}Salvattore Assessoria{% endblock %}</title>
 </head>
 <body>
     <header>
@@ -14,7 +14,7 @@
             <ul>
                 <li><a href="">Início</a></li>
                 <li><a href="">Sobre nós</a></li>
-                <li><a href="#rodape">Entre em contato</a></li>
+                <li><a href="rodape">Entre em contato</a></li>
                 <li><a href="">Nossos serviços</a></li>
                 <li><a href="">Agendamentos</a></li>
             </ul>
@@ -23,11 +23,10 @@
 
     <main>
         {%block content%}
-
-        {%end block%}
+        {%endblock%}
     </main>
 
-    <footer>
+    <footer id="rodape">
         <div class="logo_footer">
             <img src="" alt="logo_footer">
             <p>Slogan</p>
