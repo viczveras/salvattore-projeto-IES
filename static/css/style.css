@@ -43,6 +43,95 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+/* Estilo do conteúdo principal */
+section .sobre-nos {
+    background-color: #003777;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+section .sobre-nos h2 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+section .sobre-nos p {
+    font-size: 1.25em;
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0 auto 32px auto;
+}
+
+/* Estilo do banner */
+section .banner {
+    background: linear-gradient(to right, #8B0000, #4B0082, #000080);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+section .banner h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    margin-bottom: 48px;
+}
+
+section .banner p {
+    font-size: 1.25em;
+    max-width: 800px;
+    line-height: 1.6;
+    margin: 0 auto;
+}
+
+/* Estilo dos nossos serviços */
+section .servicos {
+    background-color: #f4f4f4;
+    padding: 64px 0;
+}
+
+section .servicos h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    text-align: center;
+    color: #003777;
+    margin-bottom: 48px;
+}
+
+section .servicos .card_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section .servicos .card_container .cards {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section .servicos .card_container .cards:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+section .servicos .card_container .cards h3 {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #003777;
+    margin-bottom: 8px;
+}
+
+section .servicos .card_container .cards p {
+    color: #4b5563;
+}
+
 /* Estilo do rodapé */
 footer {
     background-color: #003777;
