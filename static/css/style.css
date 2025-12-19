@@ -11,8 +11,8 @@ body {
 
 /*Estilo do cabeçalho*/
 header {
-    background-color: #003777;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -39,24 +39,25 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #6c85bd;
+    color: #8B0000;
     transform: scale(1.05);
 }
 
 /* Estilo do conteúdo principal */
-section .sobre-nos {
-    background-color: #003777;
+.sobre-nos {
+    background: linear-gradient(to right, #8B0000, #4B0082, #000080);
     color: white;
     padding: 80px 0;
     text-align: center;
 }
-section .sobre-nos h2 {
+
+.sobre-nos h2 {
     font-size: 3em;
     font-weight: bold;
     margin-bottom: 24px;
 }
 
-section .sobre-nos p {
+.sobre-nos p {
     font-size: 1.25em;
     max-width: 800px;
     line-height: 1.6;
@@ -64,14 +65,14 @@ section .sobre-nos p {
 }
 
 /* Estilo do banner */
-section .banner {
+.banner {
     background: linear-gradient(to right, #8B0000, #4B0082, #000080);
     color: white;
     padding: 80px 0;
     text-align: center;
 }
 
-section .banner h2 {
+.banner h2 {
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
@@ -79,7 +80,7 @@ section .banner h2 {
     margin-bottom: 48px;
 }
 
-section .banner p {
+.banner p {
     font-size: 1.25em;
     max-width: 800px;
     line-height: 1.6;
@@ -87,12 +88,12 @@ section .banner p {
 }
 
 /* Estilo dos nossos serviços */
-section .servicos {
+.servicos {
     background-color: #f4f4f4;
     padding: 64px 0;
 }
 
-section .servicos h2 {
+.servicos h2 {
     font-size: 2.5em;
     font-weight: bold;
     text-align: center;
@@ -100,7 +101,7 @@ section .servicos h2 {
     margin-bottom: 48px;
 }
 
-section .servicos .card_container {
+.servicos .card_container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 32px;
@@ -108,7 +109,7 @@ section .servicos .card_container {
     margin: 0 auto;
 }
 
-section .servicos .card_container .cards {
+.servicos .card_container .cards {
     background-color: white;
     padding: 24px;
     border-radius: 8px;
@@ -116,26 +117,90 @@ section .servicos .card_container .cards {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-section .servicos .card_container .cards:hover {
+.servicos .card_container .cards:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-section .servicos .card_container .cards h3 {
+.servicos .card_container .cards h3 {
     font-size: 1.5em;
     font-weight: bold;
     color: #003777;
     margin-bottom: 8px;
 }
 
-section .servicos .card_container .cards p {
+.servicos .card_container .cards p {
     color: #4b5563;
+}
+
+/*Estilo formulário de contato*/
+
+.contato-section{
+    background-color: #e4eef5;
+    padding: 64px 0;
+}
+
+.contato-section h2{
+    text-align: center;
+    font-weight: bold;
+    color: #003777;
+    margin-bottom: 48px;
+    font-size: 2.25em;
+}
+
+.contato-form{
+    background-color: white;
+    padding: 32px;
+    border-radius: 8px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contato-form label{
+    display: block;
+    color: #003777;
+    font-size: 0.875em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.contato-form input, .contato-form textarea{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e0e0ee;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus{
+    outline: none;
+    border-color: #000080;
+    box-shadow: 0 0 0 1px rgba(165, 69, 64, 1);
+}
+
+.contato-form button{
+    background-color: #a54540;
+    color: white;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: none;
+    cursor:pointer;
+    display: block;
+    margin-top: 14px;
+    width: 100%;
+}
+
+.contato-form button:hover{
+    background-color: #003777;
+    transition: background-color 0.3s ease;
 }
 
 /* Estilo do rodapé */
 footer {
-    background-color: #003777;
-    color: white;
+    background-color: white;
+    color: #003777;
     padding: 60px 10% 30px;
     font-family: Arial, sans-serif;
     display: flex;
@@ -198,7 +263,7 @@ footer > div:not(.direitos){
 }
 
 .contato li {
-    color: #ccc;
+    color: #5a5959;
     margin-bottom: 12px;
     font-size: 0.9rem;
 }
@@ -215,7 +280,7 @@ hr {
 }
 
 .direitos p {
-    color: #ccc;
+    color: #5a5959;
     font-size: 0.85em;
 }
 
