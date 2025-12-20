@@ -1,14 +1,15 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 import csv
 
 app = Flask(__name__)
+app.secret_key = "chave_secreta_super_secreta"
 
 @app.route("/")
 def pagina_principal():
     return render_template("index.html")
 
-@app.route("/contato")
+@app.route("/contato", methods=["GET", "POST"])
 def contato():
     if request.method == "POST":
         nome = request.form["nome"]
@@ -26,6 +27,8 @@ def contato():
                 writer.writerow(["Nome", "Email", "Telefone", "Assunto"])
             
             writer.writerow([nome, email, telefone, assunto])
+
+            flash("Mensagem enviada com sucesso!", "sucesso")
 
         return redirect(url_for("contato"))
     return render_template("contato.html")
