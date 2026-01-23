@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="contato-section">
+    <h1>Processos em aberto</h1>
+    {% for processo in processos %}
+        <div class="processos">
+            <h3>{{ processos.titulo }}</h3>
+            <a href="{{processos.url}}" target="blank">Acesse aqui</a>
+        </div>
+    {% endfor %}
+    <a href="{{ url_for('admin.novo_processo') }}">Novo processo</a>
+</section>
+{% endblock %}
