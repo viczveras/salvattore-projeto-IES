@@ -1,14 +1,29 @@
 {% extends "base.html" %}
 
+{% block title %}
+Processos-dashboard
+{% endblock %}
+
 {% block content %}
 <section class="contato-section">
-    <h1>Processos em aberto</h1>
-    {% for processo in processos %}
-        <div class="processos">
-            <h3>{{ processos.titulo }}</h3>
-            <a href="{{processos.url}}" target="blank">Acesse aqui</a>
-        </div>
-    {% endfor %}
-    <a href="{{ url_for('admin.novo_processo') }}">Novo processo</a>
+    <h2>Processos seletivos</h2>
+    <div class="processos-button-container">
+        <a href="{{ url_for('admin.novo_processo') }}" class="processos-button">Novo processo</a>
+    <div class="processos-container">
+        {% for processo in processos %}
+            <div class="processos-cards">
+                <h3>{{ processo.titulo }}</h3>
+                <a href="{{processo.url}}" target="blank">Acesse aqui</a>
+                <div>
+                    <form action="{{ url_for('admin.editar_processo', processo_id=processo.processo_id) }}">
+                        <button type="submit" class="contato-button">Editar</button>
+                    </form>
+                    <form action="{{ url_for('admin.deletar_processo', processo_id=processo.processo_id) }}">
+                        <button type="submit" class="contato-button">Apagar</button>
+                    </form>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </section>
 {% endblock %}

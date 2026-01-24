@@ -8,6 +8,9 @@ SALVATTORE_SENHA= 'salvattore2026'
 
 arq_processos= 'processos.csv'
 
+diretorio_base= os.path.dirname(os.path.abspath(__file__))
+arquivo_processos= os.path.join(diretorio_base, '..', 'data', 'processos.csv')
+
 @admin_bp.route('/login', methods=['GET', 'POST'])
 def login():
 
@@ -31,13 +34,12 @@ def logout():
     flash('Logout realizado com sucesso!', 'sucesso')
     return redirect(url_for('index'))
 
+    
 
 def ler_processos():
 
     processos=[]
 
-    diretorio_base= os.path.dirname(os.path.abspath(__file__))
-    arquivo_processos= os.path.join(diretorio_base, '..', 'data', 'processos.csv')
 
     with open(arquivo_processos, 'r', encoding='utf-8') as arq:
         linhas = arq.readlines()
@@ -47,7 +49,7 @@ def ler_processos():
             if not linha:
                 continue
 
-            processo_id, titulo, url = linha.split(',')
+            processo_id,titulo,url = linha.split(',')
 
             processos.append({
                 "processo_id": int(processo_id),
@@ -88,14 +90,14 @@ def novo_processo():
         maior_id=0
 
         for processo in processos:
-            if processo['id']>maior_id:
-                maior_id=processo['id']
+            if processo['processo_id']>maior_id:
+                maior_id=processo['processo_id']
     
         novo_id=maior_id+1
 
-        nova_linha=f"{novo_id},{titulo},{url}\n"
+        nova_linha=f"\n{novo_id},{titulo},{url}"
 
-        with open('processos.csv', 'a', encoding='utf-8') as arq:
+        with open(arquivo_processos, 'a', encoding='utf-8') as arq:
             arq.write(nova_linha)
     
     return redirect(url_for('admin.processos'))
@@ -113,8 +115,8 @@ def editar_processo(processo_id):
         processo_encontrado= None
 
         for processo in processos:
-            if processo['id']== processo_id:
-                processos_encontrado=processo
+            if processo['processo_id']== processo_id:
+                processo_encontrado=processo
                 break
         
         return render_template('admin/editar_processo.html', processo=processo_encontrado)
@@ -126,21 +128,21 @@ def editar_processo(processo_id):
 
 
         for processo in processos:
-            if processo['id'] != processo_id:
+            if processo['processo_id'] != processo_id:
                 processos_reescrita.append(processo)
         
         processos_reescrita.append(
             {
-                'id': processo_id,
+                'processo_id': processo_id,
                 'titulo': titulo_novo,
                 'url': url_nova,
             }
         )
                    
-    with open('processos.csv', 'w', encoding='utf-8') as arq:
+    with open(arquivo_processos, 'w', encoding='utf-8') as arq:
         arq.write("id,titulo,url\n")
         for processo in processos_reescrita:
-            linha= f"{processo['id']},{processo['titulo']},{processo['url']}\n"
+            linha= f"{processo['processo_id']},{processo['titulo']},{processo['url']}\n"
             arq.write(linha)
     
     return redirect(url_for('admin.processos'))
@@ -154,13 +156,13 @@ def deletar_processo(processo_id):
     processos_reescrita=[]
 
     for processo in processos:
-        if processo['id'] != processo_id:
+        if processo['processo_id'] != processo_id:
             processos_reescrita.append(processo)
     
-    with open('processos.csv', 'w', encoding='utf-8') as arq:
+    with open(arquivo_processos, 'w', encoding='utf-8') as arq:
         arq.write("id, titulo,url\n")
         for processo in processos_reescrita:
-            linha= f"{processo['id']},{processo['titulo'],{processo['url']}}\n"
+            linha= f"{processo['processo_id']},{processo['titulo']},{processo['url']}\n"
             arq.write(linha)
     
     return redirect(url_for('admin.processos'))

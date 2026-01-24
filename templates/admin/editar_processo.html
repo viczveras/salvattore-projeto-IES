@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+Editar processo
+{% endblock %}
+
+{% block content %}
+
+<section class="contato-section">
+    <h2>Editar processo</h2>
+    <form action="{{ url_for('admin.editar_processo', processo_id=processo.processo_id) }}" method="POST" class="contato-form">
+        <label for="titulo">
+            Titulo:
+            <input type="text" name="titulo" placeholder="Novo titulo" required>
+        </label>
+        <label for="url">
+            URL:
+            <input type="url" name="url" placeholder="Nova URL" required>
+        </label>
+        <button type="submit">Aplicar edição</button>
+    </form>
+</section>
+
+{% endblock %}

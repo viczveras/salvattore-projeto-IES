@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+Novo processo
+{% endblock %}
+
 {% block content %}
 <section class="contato-section">
     <h2>Novo processo</h2>
@@ -12,7 +16,7 @@
             URL: 
             <input type="url" name="url" required>
         </label>
-        <button type="submit">Enviar</button>
+        <button type="submit" class="contato-button">Enviar</button>
     </form>
 </section>
 {% endblock %}
