@@ -5,6 +5,10 @@ import csv
 app = Flask(__name__)
 app.secret_key = "chave_secreta_super_secreta"
 
+from admin import admin_bp
+
+app.register_blueprint(admin_bp, url_prefix="/admin")
+
 @app.route("/")
 def pagina_principal():
     return render_template("index.html")

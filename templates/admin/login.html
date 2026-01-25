@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block content %}
+
+<section class="contato-section">
+    <h2>Login administrador</h2>
+    <form method="POST" class="contato-form">
+        <label for="usuario">
+            Usuario:
+            <input type="text" id="usuario" name="usuario" placeholder="Insira o nome de usuario" required>
+        </label>
+        <label for="senha">
+            Senha:
+            <input type="password" id="senha" name="senha" placeholder="Insira a senha" required>
+        </label>
+
+        <button type="submit" class="contato-button">Enviar</button>
+    </form>
+</section>
+
+{% endblock %}

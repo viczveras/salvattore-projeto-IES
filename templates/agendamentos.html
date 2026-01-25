@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contato
+{% endblock %}
+
+{% block content %}
+<section class="agendamentos">
+    <div class="agendamento-conteiner">
+            <div class="img-agendamentos">
+                <img src="" alt="imagem-agendamentos">
+            </div><!--img-agendamentos-->
+
+            <div class="txt-agendamentos">
+                <h1>Agendamentos de Palestras</h1>
+                <p>
+                   A página de agendamento de palestras da Salvattore Assessoria foi desenvolvida 
+                   para facilitar a solicitação de palestras, treinamentos e 
+                   encontros técnicos voltados à gestão de políticas públicas.
+                   Por meio dela, gestores, servidores públicos, instituições e organizações 
+                   podem solicitar palestras, treinamentos e encontros técnicos de forma prática e organizada.
+                </p>
+
+                <div class="btn-form">
+                    <a href="#"><button>Agendar Palestra</button></a>
+                </div><!--btn-form-->
+            </div><!--txt-agendamentos-->
+    </div><!--agendamento-conteiner-->
+</section><!--agendamentos-->
+<section class="realizar">
+    <h2>Confira todos os recursos do agendamento:</h2>
+    <div class="card-agenda">
+        <div class="card-escolher">
+            <a href="#"><button><i class="bi bi-calendar2-event"></i></button></a>
+            <h3>Datas</h3>
+            <p>Escolha a data que melhor se adequa para a palestra.</p>
+        </div>
+        <div class="card-escolher">
+            <a href="#"><button><i class="bi bi-stopwatch"></i></button></a>
+            <h3>Horários</h3>
+            <p>Selecione o horário mais conveniente para você.</p>
+        </div>
+        <div class="card-escolher">
+            <a href="#"><button><i class="bi bi-geo-alt"></i></button></a>
+            <h3>Local</h3>
+            <p>Escolha o local onde deseja realizar a palestra.</p>
+        </div>
+        <div class="card-escolher">
+            <a href="#"><button><i class="bi bi-people"></i></button></a>
+            <h3>Público-Alvo</h3>
+            <p>Defina o público que participará da palestra.</p>
+        </div>
+        <div class="card-escolher">
+            <a href="#"><button><i class="bi bi-card-checklist"></i></button></a>
+            <h3>Tema</h3>
+            <p>Selecione o tema da palestra que deseja agendar.</p>
+        </div>
+    </div><!--card-agenda-->
+</section><!--realizar-->
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+Novo processo
+{% endblock %}
+
+{% block content %}
+<section class="contato-section">
+    <h2>Novo processo</h2>
+    <form action="{{ url_for('admin.novo_processo') }}" method="POST" class="contato-form">
+        <label for="titulo">
+            Titulo: 
+            <input type="text" name="titulo" required>
+        </label>
+        <label for="link">
+            URL: 
+            <input type="url" name="url" required>
+        </label>
+        <button type="submit" class="contato-button">Enviar</button>
+    </form>
+</section>
+{% endblock %}
