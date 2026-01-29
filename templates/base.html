@@ -18,7 +18,11 @@
                 <li><a href="{{ url_for('contato') }}">Entre em contato</a></li>
                 <li><a href="{{ url_for('pagina_principal') }}#nossos_servicos">Nossos serviços</a></li>
                 <li><a href="">Agendamentos</a></li>
-                <li><a href="{{ url_for('admin.login') }}"><i class="fa-solid fa-user"></i></a></li>
+                {% if 'usuario_logado' in session %}
+                    <li><a href="{{ url_for('admin.logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                {% else %}
+                    <li><a href="{{ url_for('admin.login') }}"><i class="fa-solid fa-user"></i></a></li>
+                {% endif %}
             </ul>
         </nav>
     </header>

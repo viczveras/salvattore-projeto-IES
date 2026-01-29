@@ -169,6 +169,7 @@ nav ul li a:hover {
 .contato-form input, .contato-form textarea{
     width: 100%;
     padding: 10px;
+    margin-bottom: 10px;
     border: 1px solid #e0e0ee;
     border-radius: 4px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -178,7 +179,7 @@ nav ul li a:hover {
 .contato-form textarea:focus{
     outline: none;
     border-color: #000080;
-    box-shadow: 0 0 0 1px rgba(165, 69, 64, 1);
+    box-shadow: 0 0 0 1px #003777;
 }
 
 .contato-button{
