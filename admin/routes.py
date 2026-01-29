@@ -1,7 +1,6 @@
 from flask import render_template, request, redirect, url_for, session, flash
 from . import admin_bp
 import os
-import csv
 
 SALVATTORE_ADMIN= 'salvattore_admin'
 SALVATTORE_SENHA= 'salvattore2026'
@@ -32,7 +31,7 @@ def login():
 def logout():
     session.pop('usuario_logado', None)
     flash('Logout realizado com sucesso!', 'sucesso')
-    return redirect(url_for('index'))
+    return redirect(url_for('pagina_principal'))
 
     
 
