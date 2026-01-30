@@ -19,6 +19,9 @@
                 <li><a href="{{ url_for('pagina_principal') }}#nossos_servicos">Nossos serviços</a></li>
                 <li><a href="">Agendamentos</a></li>
                 {% if 'usuario_logado' in session %}
+                <li><a href="{{ url_for('admin.processos') }}">Gerenciar</a></li>
+                {%endif%}
+                {% if 'usuario_logado' in session %}
                     <li><a href="{{ url_for('admin.logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a></li>
                 {% else %}
                     <li><a href="{{ url_for('admin.login') }}"><i class="fa-solid fa-user"></i></a></li>
