@@ -251,6 +251,13 @@ nav ul li a:hover {
     border: 1px solid #34d399;
 }
 
+.alert-erro{
+    background-color: #f8d7da;
+    color: black;
+    border: 1px solid #a54540;
+}
+
+
 /* Estilização da página de agendamentos*/
 section.agendamentos {
     padding: 40px 4%;

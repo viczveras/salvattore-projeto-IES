@@ -39,7 +39,6 @@ def ler_processos():
 
     processos=[]
 
-
     with open(arquivo_processos, 'r', encoding='utf-8') as arq:
         linhas = arq.readlines()
 
@@ -64,7 +63,7 @@ def processos():
     processos= ler_processos()
 
     if 'usuario_logado' not in session:
-        flash('Você não esta logado', 'error')
+        flash('Você não esta logado', 'erro')
         return redirect(url_for('admin.login'))
 
     return render_template('admin/processos.html', processos= processos)
@@ -74,7 +73,7 @@ def processos():
 def novo_processo():
     
     if 'usuario_logado' not in session:
-        flash('Você não está logado.', 'error')
+        flash('Você não está logado.', 'erro')
         return redirect(url_for('admin.login'))
     
     if request.method=='GET':
@@ -159,7 +158,7 @@ def deletar_processo(processo_id):
             processos_reescrita.append(processo)
     
     with open(arquivo_processos, 'w', encoding='utf-8') as arq:
-        arq.write("id, titulo,url\n")
+        arq.write("id,titulo,url\n")
         for processo in processos_reescrita:
             linha= f"{processo['processo_id']},{processo['titulo']},{processo['url']}\n"
             arq.write(linha)
