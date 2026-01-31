@@ -37,5 +37,9 @@ def contato():
         return redirect(url_for("contato"))
     return render_template("contato.html")
 
+@app.route('/processos')
+def processos_seletivos():
+    return render_template('processos.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

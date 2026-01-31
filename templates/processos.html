@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+Processos seletivos
+{% endblock %}
+
+{% block content %}
+<section class="contato-section">
+    <h2>Procesos seletivos</h2>
+    <div class="processos-container">
+        {% if processos%}
+            {% for processo in processos %}
+            <div class="processos-cards">
+                <h3>{{processo.titulo}}</h3>
+                <a href="{{ processo.url }}" target="blank">Acesse aqui</a>
+            </div>
+        {% endfor %}
+        {% else %}
+            <div class="processos-cards">
+                <h3>Sem processos abertos</h3>
+            </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}
