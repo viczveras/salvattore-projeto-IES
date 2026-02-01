@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}
+Processos-dashboard
+{% endblock %}
+
+{% block content %}
+<section class="contato-section">
+    <h2>Processos seletivos</h2>
+    <div class="processos-button-container">
+        <a href="{{ url_for('admin.novo_processo') }}" class="processos-button">Novo processo</a>
+    <div class="tabela-container">
+        <table class="tabela-gerenciar">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Titulo</th>
+                    <th>URL</th>
+                    <th>Ações</th>
+                </tr>
+            </th>
+            {% for processo in processos %}
+                <tb>
+                    <tr>
+                        <td>{{ processo.processo_id }}</td>
+                        <td>{{ processo.titulo }}</td>
+                        <td class="coluna-url"><a href="{{ processo.url }}">{{ processo.url }}</a></td>
+                        <td class="coluna-botoes">
+                            <div class="tabela-botoes-container">
+                                <form action="{{ url_for('admin.editar_processo', processo_id=processo.processo_id) }}">
+                                    <button type="submit" class="botao-tabela">Editar</button>
+                                </form>
+                                <form action="{{ url_for('admin.deletar_processo', processo_id=processo.processo_id) }}">
+                                    <button type="submit" class="botao-tabela">Apagar</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tb>
+            {% endfor %}
+        </table>
+    </div>
+</section>
+{% endblock %}

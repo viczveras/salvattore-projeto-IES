@@ -20,7 +20,7 @@ def login():
         if usuario == SALVATTORE_ADMIN and senha == SALVATTORE_SENHA:
             session['usuario_logado'] = usuario
             flash('Login realizado com sucesso!', 'sucesso')
-            return redirect(url_for('admin.processos'))
+            return redirect(url_for('admin.gerenciar_processos'))
         else:
             flash('Usuário ou senha incorretos.', 'erro')
     
@@ -33,7 +33,6 @@ def logout():
     flash('Logout realizado com sucesso!', 'sucesso')
     return redirect(url_for('pagina_principal'))
 
-    
 
 def ler_processos():
 
@@ -59,14 +58,14 @@ def ler_processos():
 
 
 @admin_bp.route('/processos')
-def processos():
+def gerenciar_processos():
     processos= ler_processos()
 
     if 'usuario_logado' not in session:
         flash('Você não esta logado', 'erro')
         return redirect(url_for('admin.login'))
 
-    return render_template('admin/processos.html', processos= processos)
+    return render_template('admin/gerenciar_processos.html', processos= processos)
 
 
 @admin_bp.route('/novo', methods=['GET','POST'])
@@ -98,7 +97,7 @@ def novo_processo():
         with open(arquivo_processos, 'a', encoding='utf-8') as arq:
             arq.write(nova_linha)
     
-    return redirect(url_for('admin.processos'))
+    return redirect(url_for('admin.gerenciar_processos'))
 
 
 @admin_bp.route('/editar/<int:processo_id>', methods=['GET', 'POST'])
@@ -143,7 +142,7 @@ def editar_processo(processo_id):
             linha= f"{processo['processo_id']},{processo['titulo']},{processo['url']}\n"
             arq.write(linha)
     
-    return redirect(url_for('admin.processos'))
+    return redirect(url_for('admin.gerenciar_processos'))
 
 
 @admin_bp.route('/deletar/<int:processo_id>', methods=['GET', 'POST'])
@@ -163,4 +162,4 @@ def deletar_processo(processo_id):
             linha= f"{processo['processo_id']},{processo['titulo']},{processo['url']}\n"
             arq.write(linha)
     
-    return redirect(url_for('admin.processos'))
+    return redirect(url_for('admin.gerenciar_processos'))
