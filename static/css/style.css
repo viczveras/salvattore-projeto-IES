@@ -257,6 +257,71 @@ nav ul li a:hover {
     border: 1px solid #a54540;
 }
 
+/* Estilo tabela */
+
+.tabela-container{
+    overflow-x: auto;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 32px;
+}
+
+.tabela-container .tabela-gerenciar{
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela-gerenciar thead{
+    background-color: #003777;
+    color: white;
+    width: 100%;
+}
+
+.tabela-gerenciar th,
+.tabela-gerenciar td{
+    padding: 12px 24px;
+    text-align: left;
+    border: 1px solid #e4eef5;
+}
+
+.tabela-gerenciar th{
+    font-size: 0.875em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.tabela-gerenciar tbody, tr:nth-child(even){
+    background-color: #a54540;
+}
+
+.tabela-botoes-container{
+    display: flex;
+    gap: 8px;
+    justify-content: left;
+}
+
+.botao-tabela{
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+}
+
+.coluna-url a{
+    color: white;
+}
+
+.coluna-botoes{
+    max-width: 230px;
+}
 
 /* Estilização da página de agendamentos*/
 section.agendamentos {
