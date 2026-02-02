@@ -20,8 +20,8 @@ header {
     align-items: center;
 }
 
-img.logo {
-    height: 48px;
+img {
+    height: 58px;
 }
 
 nav ul{
@@ -436,14 +436,15 @@ footer > div:not(.direitos){
     }
 }
 
-.logo_footer img {
-    max-width: 180px;
-    margin-bottom: 20px;
+.logo_footer .logo img {
+    height: 40px;
+    width: auto;
     display: block;
+    margin-bottom: 25px;
 }
 
 .logo_footer p {
-    color: #ccc;
+    color: #5a5959;
     font-size: 0.95em;
     margin-bottom: 20px;
 }

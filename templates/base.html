@@ -10,7 +10,7 @@
 </head>
 <body>
     <header>
-        <img src="" alt="logo">
+        <img src="{{ url_for('static', filename='images/SA-Photoroom.png') }}" alt="logo">
         <nav>
             <ul>
                 <li><a href="{{ url_for('pagina_principal') }}">Início</a></li>
@@ -50,8 +50,8 @@
 
     <footer id="rodape">
         <div class="logo_footer">
-            <img src="" alt="logo_footer">
-            <p>Slogan</p>
+            <img src="{{ url_for('static', filename='images/SA footer-Photoroom.png') }}" alt="logo_footer" class="logo">
+            <p>Transformando a gestão pública com inovação e eficiência</p>
             <a href="https://www.instagram.com/salvattore.assessoria?igsh=MWUwZnBxM3lmNXJ5bw=="><i class="bi bi-instagram"></i></a>
         </div><!--logo_footer-->
         <div class="contato">
