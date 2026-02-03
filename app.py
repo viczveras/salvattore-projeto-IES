@@ -41,5 +41,9 @@ def contato():
 def processos_seletivos():
     return render_template('processos.html')
 
+@app.route('/agendamentos')
+def agendamentos():
+    return render_template('agendamentos.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

@@ -1,5 +1,5 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
-/*Estilo geral*/
+
 * {
     margin: 0;
     padding: 0;
@@ -132,6 +132,11 @@ nav ul li a:hover {
 
 .servicos .card_container .cards p {
     color: #4b5563;
+}
+
+.logo-card {
+    width: 200px;
+    height: auto;
 }
 
 /*Estilo formulário de contato*/
