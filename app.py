@@ -45,5 +45,9 @@ def processos_seletivos():
 
     return render_template('processos.html', processos=processos)
 
+@app.route('/agendamentos')
+def agendamentos():
+    return render_template('agendamentos.html')
+
 if __name__ == "__main__":
     app.run(debug=True)
