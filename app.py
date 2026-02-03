@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
 import csv
+from admin.routes import diretorio_base, arquivo_processos, ler_processos
 
 app = Flask(__name__)
 app.secret_key = "chave_secreta_super_secreta"
@@ -39,7 +40,10 @@ def contato():
 
 @app.route('/processos')
 def processos_seletivos():
-    return render_template('processos.html')
+
+    processos= ler_processos()
+
+    return render_template('processos.html', processos=processos)
 
 @app.route('/agendamentos')
 def agendamentos():
