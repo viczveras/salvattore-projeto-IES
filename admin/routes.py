@@ -1,9 +1,12 @@
 from flask import render_template, request, redirect, url_for, session, flash
 from . import admin_bp
+from dotenv import load_dotenv
 import os
 
-SALVATTORE_ADMIN= 'salvattore_admin'
-SALVATTORE_SENHA= 'salvattore2026'
+load_dotenv()
+
+SALVATTORE_ADMIN= os.getenv('SALVATTORE_ADMIN')
+SALVATTORE_SENHA= os.getenv('SALVATTORE_SENHA')
 
 arq_processos= 'processos.csv'
 
