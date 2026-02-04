@@ -482,6 +482,17 @@ footer > div:not(.direitos){
     margin-bottom: 40px;
 }
 
+.link-email{
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3 ease;
+}
+
+.link-email:hover{
+    color: #000080;
+    text-decoration: none;
+}
+
 @media (min-width: 768px) {
     footer {
         display: grid;
