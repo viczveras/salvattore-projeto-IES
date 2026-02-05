@@ -44,6 +44,16 @@ nav ul li a:hover {
     transform: scale(1.05);
 }
 
+#menu-burger{
+    display: none;
+}
+
+.menu-icon{
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
 /* Estilo do conteúdo principal */
 .sobre-nos {
     background: linear-gradient(to right, #8B0000, #4B0082, #000080);
@@ -279,13 +289,14 @@ nav ul li a:hover {
 
 .processos-cards{
     background-color: white;
+    color: #003777;
     text-align: center;
     padding: 20px;
     border-radius: 10px;
     max-width: 300px;
     min-width: 200px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
+} 
 
 .processos-button-container{
     text-align: center;
@@ -361,10 +372,6 @@ nav ul li a:hover {
     font-size: 0.875em;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.tabela-gerenciar tbody, tr:nth-child(even){
-    background-color: #a54540;
 }
 
 .tabela-botoes-container{
@@ -635,5 +642,25 @@ hr {
 
     .contato h3 {
         margin-top: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu-icon{
+        display: block;
+    }
+
+    nav{
+        display: none;
+    }
+
+    nav ul{
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    #menu-burger:checked ~ nav{
+        display: block;
     }
 }
