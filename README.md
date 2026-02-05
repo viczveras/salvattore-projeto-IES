@@ -79,6 +79,9 @@ salvattore-projeto-IES/
 
 ---
 
+<img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/a20d073d-0c32-4d79-8a39-632fbd3e030d" />
+
+
 ## 🚀 Instalação e Configuração
 
 ### Pré-requisitos
