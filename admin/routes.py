@@ -49,7 +49,7 @@ def ler_processos():
             if not linha:
                 continue
 
-            processo_id,titulo,url = linha.split(',')
+            processo_id,titulo,url = linha.split('|')
 
             processos.append({
                 "processo_id": int(processo_id),
@@ -95,7 +95,7 @@ def novo_processo():
     
         novo_id=maior_id+1
 
-        nova_linha=f"\n{novo_id},{titulo},{url}"
+        nova_linha=f"\n{novo_id}|{titulo}|{url}"
 
         with open(arquivo_processos, 'a', encoding='utf-8') as arq:
             arq.write(nova_linha)
@@ -140,9 +140,9 @@ def editar_processo(processo_id):
         )
                    
     with open(arquivo_processos, 'w', encoding='utf-8') as arq:
-        arq.write("id,titulo,url\n")
+        arq.write("id|titulo|url\n")
         for processo in processos_reescrita:
-            linha= f"{processo['processo_id']},{processo['titulo']},{processo['url']}\n"
+            linha= f"{processo['processo_id']}|{processo['titulo']}|{processo['url']}\n"
             arq.write(linha)
     
     return redirect(url_for('admin.gerenciar_processos'))
@@ -160,9 +160,9 @@ def deletar_processo(processo_id):
             processos_reescrita.append(processo)
     
     with open(arquivo_processos, 'w', encoding='utf-8') as arq:
-        arq.write("id,titulo,url\n")
+        arq.write("id|titulo|url\n")
         for processo in processos_reescrita:
-            linha= f"{processo['processo_id']},{processo['titulo']},{processo['url']}\n"
+            linha= f"{processo['processo_id']}|{processo['titulo']}|{processo['url']}\n"
             arq.write(linha)
     
     return redirect(url_for('admin.gerenciar_processos'))
