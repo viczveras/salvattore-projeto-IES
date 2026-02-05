@@ -5,7 +5,7 @@ import requests
 from admin.routes import diretorio_base, arquivo_processos, ler_processos
 
 app = Flask(__name__)
-app.secret_key = "chave_secreta_super_secreta"
+app.secret_key = os.getenv("SECRET_KEY")
 
 from admin import admin_bp
 
