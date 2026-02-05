@@ -214,6 +214,69 @@ nav ul li a:hover {
     background-color: #003777;
     transition: background-color 0.3s ease;
 }
+.form-section {
+    background-color: #e4eef5;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.form-agendamentos {
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.campos-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.campo label{
+    display: block;
+    font-weight: bold;
+    color: #003777;
+    margin-bottom: 6px;
+}
+
+.campo input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.campo input:focus{
+    outline: none;
+    border-color: #003777;
+    box-shadow: 0 0 0 2px rgba(0, 55, 119, 0.2);
+}
+
+.btn-enviar{
+    background-color: #a54540;
+    color: white;
+    font-weight: bold;
+    padding: 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.btn-enviar:hover{
+    background-color: #003777;
+    transition: 0.3s;
+}
+
 
 /* Estilo Processos */
 .processos-container{

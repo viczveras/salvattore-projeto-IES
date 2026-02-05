@@ -19,7 +19,7 @@ Contato
         podem solicitar palestras, treinamentos e encontros técnicos de forma prática e organizada.
         </p>
 
-        <a href="#" class="btn-form">Agendar Palestra</a>
+        <a href="#form" class="btn-form">Agendar Palestra</a>
 
     </div><!--txt-agendamentos-->
     <div class="img-agendamentos">
@@ -68,4 +68,46 @@ Contato
         </div>
     </div><!--card-agenda-->
 </section><!--realizar-->
+<section class="form-section">
+    <form action="{{ url_for('agendamentos') }}" method="post">
+        <section class="form-agendamentos" id="form">
+            <h2>Preencha o formulário para agendar sua palestra</h2>
+            <div class="campos-form">
+                <div class="campo">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="campo">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" required>
+                </div>
+                <div class="campo">
+                    <label for="data">Data da Palestra</label>
+                    <input type="date" id="data" name="data" required>
+                </div>
+                <div class="campo">
+                    <label for="horario">Horário</label>
+                    <input type="time" id="horario" name="horario" required>
+                </div>
+                <div class="campo">
+                    <label for="local">Local</label>
+                    <input type="text" id="local" name="local" required>
+                </div>
+                <div class="campo">
+                    <label for="publico">Público-Alvo</label>
+                    <input type="text" id="publico" name="publico" required>
+                </div>
+                <div class="campo">
+                    <label for="tema">Tema da Palestra</label>
+                    <input type="text" id="tema" name="tema" required>
+                </div>
+            </div><!--campos-form-->
+            <button type="submit" class="btn-enviar">Enviar Solicitação</button>
+</section>
+    </section><!--form-agendamentos-->
+</form>
 {% endblock %}
