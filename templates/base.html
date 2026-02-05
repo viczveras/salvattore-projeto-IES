@@ -12,11 +12,13 @@
 <body>
     <header>
         <img src="{{ url_for('static', filename='images/SA-Photoroom.png') }}" alt="logo">
+        <input type="checkbox" id="menu-burger">
+        <label for="menu-burger" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+        </label>
         <nav>
             <ul>
                 <li><a href="{{ url_for('pagina_principal') }}">Início</a></li>
-                <li><a href="{{ url_for('pagina_principal') }}#nossos_servicos">Nossos serviços</a></li>
-                <li><a href="{{ url_for('pagina_principal') }}#sobre">Sobre nós</a></li>
                 <li><a href="{{ url_for('contato') }}">Entre em contato</a></li>
                 <li><a href="{{ url_for('agendamentos')}}">Agendamentos</a></li>
                 <li><a href="{{ url_for('processos_seletivos') }}">Processos abertos</a></li>
